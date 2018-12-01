@@ -1,5 +1,20 @@
 <div class="task-item">
   <h2>My Tasks</h2>
+  <form #createForm="ngForm" ngNativeValidate (ngSubmit)="addToList(createForm)">
+    <div id="crateBlock" class="addItems" class="input-group">
+      <input class="form-control" id="createInput" placeholder="Enter To Do Name" type="text" required name="createInput" [(ngModel)]='newItem' #createInput=ngModel minlength="5" />
+      <div class="input-group-append">
+        <button id="createItem" class="btn btn-success" [disabled]="createInput.invalid">Add</button>
+      </div> 
+    </div>
+    <div class="error-block" style="display:block;">
+      <span *ngIf="createInput.errors?.required && createInput.touched" class="help-block text-danger">To Do Name is
+        required</span>
+      <span *ngIf="createInput.errors?.minlength && createInput.touched" class="help-block text-danger">To Do Name
+        must be at least 5 charcters length</span>
+
+    </div>
+  </form>
   <div class="todo-item" *ngFor="let todo of todolist">
     <label>
       <input type="checkbox">
