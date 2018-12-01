@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'todo';
+  todolist: string[] = new Array('Have Breakfast', 'Watch TV', 'Have Lunch', 'Go To Work');
 }
