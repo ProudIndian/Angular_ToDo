@@ -1,0 +1,51 @@
+   .task-item{
+    width: 100%;
+    padding: 40px;
+  }
+  .task-item h2{
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .todo-item{
+    display: block;
+    padding: 10px 0;
+  }
+  label{      
+    align-items: center;
+    cursor: pointer;
+  }
+  .todo-item input[type='checkbox']{
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .todo-item i{
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid green;
+    text-align: center;
+    line-height: 48px;
+    font-size: 20px;
+    margin-right: 14px;
+    color: transparent;
+  }
+  
+  .text{
+    font-size: 18px;
+    color: #fff;
+    display: inline-block;
+  }
+  
+  .todo-item input:checked ~ i{
+    color:tomato;
+    border: 1px solid tomato;
+  }
+  
+  .todo-item input:checked ~ .text{
+    text-decoration: line-through;
+    color: tomato;
+  }
+  
