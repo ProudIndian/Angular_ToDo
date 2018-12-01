@@ -48,4 +48,6 @@
     text-decoration: line-through;
     color: tomato;
   }
-  
+  .input-group{
+      width: 300px;
+  }
