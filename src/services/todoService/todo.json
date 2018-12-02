@@ -1,5 +1,4 @@
-{
-    "todoList":[{
+[{
         "id": 1,
         "value": "Have Breakfast"
     },{
@@ -11,6 +10,5 @@
     },{
         "id": 4,
         "value": "Go To Work"
-    }
-    ]
-}
+    }]
+    

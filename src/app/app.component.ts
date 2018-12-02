@@ -15,11 +15,11 @@ export class AppComponent implements OnInit {
   newItem = '';
   constructor(private _TodoService: TodoService) { }
   addToList(addlist: NgForm) {
-    const a: any = new Object(this.todolist);
-    let maxId = a.todoList.reduce(function (prev, curr) {
+    const List: any = this.todolist;
+    let maxId = List.reduce(function (prev, curr) {
       return prev.id > curr.id ? prev : curr;
     });
-    a.todoList.push({ id: maxId++, value: addlist.value.createInput });
+    List.push({ id: maxId++, value: addlist.value.createInput });
     addlist.resetForm();
   }
   ngOnInit() {
