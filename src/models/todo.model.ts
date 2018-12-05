@@ -1,3 +1,4 @@
-export interface TodoModel {
-    todoList:  any [];
+export class TodoModel {
+    id: number;
+    name: string;
 }
