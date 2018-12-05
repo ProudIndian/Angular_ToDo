@@ -1,17 +1,17 @@
 <div class="task-item">
   <h2>My Tasks</h2>
-  <form #createForm="ngForm" ngNativeValidate (ngSubmit)="addToList(createForm)">
+  <form #newTodo="ngForm" ngNativeValidate (ngSubmit)="addToList(newTodo)">
     <div id="crateBlock" class="addItems" class="input-group">
-      <input class="form-control" id="createInput" placeholder="Enter To Do Name" type="text" required name="createInput"
-        [(ngModel)]='newItem' #createInput=ngModel minlength="5" />
+      <input class="form-control" id="name" placeholder="Enter To Do Name" type="text" required name="name"
+        [(ngModel)]='newTodo.name' #name=ngModel minlength="5" />
       <div class="input-group-append">
-        <button id="createItem" class="btn btn-success" [disabled]="createInput.invalid">Add</button>
+        <button id="createItem" class="btn btn-success" [disabled]="name.invalid">Add</button>
       </div>
     </div>
     <div class="error-block" style="display:block;">
-      <span *ngIf="createInput.errors?.required && createInput.touched" class="help-block text-danger">To Do Name is
+      <span *ngIf="name.errors?.required && name.touched" class="help-block text-danger">To Do Name is
         required</span>
-      <span *ngIf="createInput.errors?.minlength && createInput.touched" class="help-block text-danger">To Do Name
+      <span *ngIf="name.errors?.minlength && name.touched" class="help-block text-danger">To Do Name
         must be at least 5 charcters length</span>
 
     </div>
@@ -20,7 +20,7 @@
     <label>
       <input type="checkbox">
       <i class="fas fa-check"></i>
-      <span class="text">{{todo.value}}</span>
+      <span class="text">{{todo.name}}</span>
     </label>
     <i id={{todo.id}} class="fas fa-trash" (click)="deleteTodo($event)"></i>
   </div>

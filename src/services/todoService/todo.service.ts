@@ -7,7 +7,7 @@ export class TodoService {
     private _url = 'src/services/todoService/todo.json';
     constructor(private _http: Http) {
     }
-    getResumeDetails() {
+    getTodoList() {
         return this._http.get(this._url).
         pipe(
            map((response: Response) => response.json()));

@@ -1,14 +1,14 @@
 [{
         "id": 1,
-        "value": "Have Breakfast"
+        "name": "Have Breakfast"
     },{
         "id": 2,
-        "value": "Watch TV"
+        "name": "Watch TV"
     },{
         "id": 3,
-        "value": "Have Lunch"
+        "name": "Have Lunch"
     },{
         "id": 4,
-        "value": "Go To Work"
+        "name": "Go To Work"
     }]
     
