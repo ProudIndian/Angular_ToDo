@@ -1,9 +1,9 @@
   .task-item {
     width: 500px;
-    position: fixed;
-    top: 50%;
+    height: 100%;
+    position: absolute;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%);
   }
 
   .task-item h2 {
