@@ -1,28 +1,34 @@
 <div class="task-item">
   <h2>My Tasks</h2>
-  <form #newTodo="ngForm" ngNativeValidate (ngSubmit)="addToList(newTodo)">
-    <div id="crateBlock" class="addItems" class="input-group">
-      <input class="form-control" id="name" placeholder="Enter To Do Name" type="text" required name="name"
-        [(ngModel)]='newTodo.name' #name=ngModel minlength="5" />
-      <div class="input-group-append">
-        <button id="createItem" class="btn btn-success" [disabled]="name.invalid">Add</button>
+  <div class="container">
+    <form #newTodo="ngForm" ngNativeValidate (ngSubmit)="addToList(newTodo)">
+      <div id="crateBlock" class="addItems" class="input-group">
+        <input class="form-control" id="name" placeholder="Enter To Do Name" type="text" required name="name"
+          [(ngModel)]='newTodo.name' #name=ngModel minlength="5" />
+        <div class="input-group-append">
+          <button id="createItem" class="btn btn-success" [disabled]="name.invalid">Add</button>
+        </div>
+      </div>
+      <div class="error-block" style="display:block;">
+        <span *ngIf="name.errors?.required && name.touched" class="help-block text-danger">To Do Name is
+          required</span>
+        <span *ngIf="name.errors?.minlength && name.touched" class="help-block text-danger">To Do Name
+          must be at least 5 charcters length</span>
+
+      </div>
+    </form>
+    <div class="todo-item row" *ngFor="let todo of todolist">
+      <div class="col-xs-10 col-md-10">
+        <label>
+          <input type="checkbox">
+          <i class="fas fa-check"></i>
+          <span class="text">{{todo.name}}</span>
+        </label>
+      </div>
+      <div class="col-xs-2 col-md-2 pull-right">
+        <i id={{todo.id}} class="fas fa-trash" (click)="deleteTodo($event)"></i>
       </div>
     </div>
-    <div class="error-block" style="display:block;">
-      <span *ngIf="name.errors?.required && name.touched" class="help-block text-danger">To Do Name is
-        required</span>
-      <span *ngIf="name.errors?.minlength && name.touched" class="help-block text-danger">To Do Name
-        must be at least 5 charcters length</span>
-
-    </div>
-  </form>
-  <div class="todo-item" *ngFor="let todo of todolist">
-    <label>
-      <input type="checkbox">
-      <i class="fas fa-check"></i>
-      <span class="text">{{todo.name}}</span>
-    </label>
-    <i id={{todo.id}} class="fas fa-trash" (click)="deleteTodo($event)"></i>
+    <p *ngIf="todolist?.length == 0" id="noTasks">No tasks pending</p>
   </div>
-  <p *ngIf="todolist?.length == 0" id="noTasks">No tasks pending</p>
 </div>
