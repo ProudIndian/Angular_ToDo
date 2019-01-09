@@ -1,3 +1,4 @@
 export interface Itodo {
-    todoList:  any [];
+    id: number;
+    name: number;
 }

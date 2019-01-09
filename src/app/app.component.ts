@@ -41,4 +41,3 @@ export class AppComponent implements OnInit {
     List.splice(removeIndex, 1);
   }
 }
-
